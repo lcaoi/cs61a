@@ -104,13 +104,13 @@ def with_if_function():
 
 def cond():
     "*** YOUR CODE HERE ***"
-
+    
 def true_func():
     "*** YOUR CODE HERE ***"
-
+    
 def false_func():
     "*** YOUR CODE HERE ***"
-
+    
 
 def hailstone(x):
     """Print the hailstone sequence starting at x and return its
