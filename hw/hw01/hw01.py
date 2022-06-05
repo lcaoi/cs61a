@@ -100,6 +100,8 @@ def with_if_function():
     """
     return if_function(cond(), true_func(), false_func())
 
+# cond() = condition, true_func() = true_result, false_func() = false_result
+
 def cond():
     "*** YOUR CODE HERE ***"
 
