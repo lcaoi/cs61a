@@ -98,19 +98,23 @@ def with_if_function():
     >>> print(result)
     None
     """
+    # cond() = condition, true_func() = true_result, false_func() = false_result
+    # no matter cond() is True or False, truc_func() and false_func() both will be evaluated
+    # so by puting "print()" inside truc_func() and false_func(), the number "42" and "47" will be printed anyway
     return if_function(cond(), true_func(), false_func())
-
-# cond() = condition, true_func() = true_result, false_func() = false_result
 
 def cond():
     "*** YOUR CODE HERE ***"
-    
+    return False
+
 def true_func():
     "*** YOUR CODE HERE ***"
-    
+    print(42)
+
 def false_func():
     "*** YOUR CODE HERE ***"
-    
+    print(47)
+
 
 def hailstone(x):
     """Print the hailstone sequence starting at x and return its
