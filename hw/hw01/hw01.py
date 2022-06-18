@@ -1,3 +1,4 @@
+# Q2
 from operator import add, sub
 
 def a_plus_abs_b(a, b):
@@ -19,6 +20,7 @@ def a_plus_abs_b(a, b):
     return h(a, b)
 
 
+# Q3
 def two_of_three(x, y, z):
     """Return a*a + b*b, where a and b are the two smallest members of the
     positive numbers x, y, and z.
@@ -40,6 +42,7 @@ def two_of_three(x, y, z):
     return x**2 + y**2 + z**2 - max(x, y, z)**2
 
 
+# Q4
 def largest_factor(x):
     """Return the largest factor of x that is smaller than x.
 
@@ -58,6 +61,7 @@ def largest_factor(x):
     return result
     
 
+# Q5
 def if_function(condition, true_result, false_result):
     """Return true_result if condition is a true value, and
     false_result otherwise.
@@ -99,6 +103,7 @@ def with_if_function():
     # cond() = condition, true_func() = true_result, false_func() = false_result
     # no matter cond() is True or False, truc_func() and false_func() both will be evaluated
     # so by puting "print()" inside truc_func() and false_func(), the number "42" and "47" will be printed anyway
+    # Check here: https://giancarlo-ma.github.io/2018/08/24/cs61a-hw01/
     return if_function(cond(), true_func(), false_func())
 
 def cond():
@@ -114,6 +119,7 @@ def false_func():
     print(47)
 
 
+# Q6
 def hailstone(x):
     """Print the hailstone sequence starting at x and return its
     length.
