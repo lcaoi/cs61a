@@ -5,4 +5,4 @@ def twenty_twenty():
     >>> twenty_twenty()
     2020
     """
-    return 2000+2*10
+    return 2000 + 2 * 10
