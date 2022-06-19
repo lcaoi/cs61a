@@ -136,4 +136,13 @@ def hailstone(x):
     7
     """
     "*** YOUR CODE HERE ***"
-
+    i = 1
+    while x != 1:
+        print (x)
+        if x % 2 == 0:
+            x = x // 2
+        else:
+            x = x*3 + 1
+        i = i + 1
+    print (x)
+    return i

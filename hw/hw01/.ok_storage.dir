@@ -3,3 +3,4 @@
 'largest_factor-correct', (1024, 66)
 'with_if_statement-correct', (1536, 66)
 'with_if_function-correct', (2048, 66)
+'hailstone-correct', (2560, 66)
