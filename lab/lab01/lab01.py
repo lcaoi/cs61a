@@ -12,6 +12,16 @@ def falling(n, k):
     1
     """
     "*** YOUR CODE HERE ***"
+    i = n
+    counter = 1
+    if k > 0:
+        while k > 1:
+            i = i * (n - counter)
+            k -= 1
+            counter += 1
+        print(i)
+    else:
+        print("1")
 
 
 # Q5
