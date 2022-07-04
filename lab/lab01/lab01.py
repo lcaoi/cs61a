@@ -1,3 +1,4 @@
+# Q4
 def falling(n, k):
     """Compute the falling factorial of n to depth k.
 
@@ -13,7 +14,7 @@ def falling(n, k):
     "*** YOUR CODE HERE ***"
 
 
-
+# Q5
 def sum_digits(y):
     """Sum all the digits of y.
 
@@ -30,7 +31,7 @@ def sum_digits(y):
     "*** YOUR CODE HERE ***"
 
 
-
+# Q7
 def double_eights(n):
     """Return true if n has two eights in a row.
     >>> double_eights(8)
