@@ -39,6 +39,11 @@ def sum_digits(y):
     6
     """
     "*** YOUR CODE HERE ***"
+    result = 0
+    while y>0:
+        result = result + y%10   # to get the unit digit
+        y = y//10   # to decrease digit (三位數to兩位數)
+    return result
 
 
 # Q7
@@ -58,5 +63,5 @@ def double_eights(n):
     False
     """
     "*** YOUR CODE HERE ***"
-
+    
 
