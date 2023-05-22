@@ -6,22 +6,21 @@ def falling(n, k):
     120
     >>> falling(4, 3)  # 4 * 3 * 2
     24
-    >>> falling(4, 1)  # 4
+    >>> falling(4, 1)  # 4 * 1
     4
     >>> falling(4, 0)
     1
     """
     "*** YOUR CODE HERE ***"
-    i = n
+    temp = n
     counter = 1
     if k > 0:
-        while k > 1:
-            i = i * (n - counter)
-            k -= 1
+        while counter < k:
+            temp = temp*(n-counter)
             counter += 1
-        print(i)
+        print(temp)
     else:
-        print("1")
+        print(1)
 
 
 # Q5
