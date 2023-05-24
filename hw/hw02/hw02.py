@@ -12,6 +12,8 @@ increment = lambda x: x + 1
 HW_SOURCE_FILE=__file__
 
 
+
+# Q1 (done)
 def product(n, term):
     """Return the product of the first n terms in a sequence.
     n -- a positive integer
@@ -31,8 +33,33 @@ def product(n, term):
     162
     """
     "*** YOUR CODE HERE ***"
+    result, i = 1, 1
+    while i <= n:
+        result = result*term(i)
+        i += 1
+    return result
+
+    '''
+    temp = 1
+    if term == identity:
+        for i in range(n):
+            temp = identity(temp)*(n-i)
+    elif term == square:
+        for i in range(n):
+            temp = temp*(n-i)
+        temp = square(temp)
+    elif term == increment:
+        for i in range(n):
+            temp = temp*increment(1+i)
+    elif term == triple:
+        for i in range(n):
+            temp = temp*triple(i+1)
+    return temp
+    '''
 
 
+
+# Q2
 def accumulate(combiner, base, n, term):
     """Return the result of combining the first n terms in a sequence and base.
     The terms to be combined are term(1), term(2), ..., term(n).  combiner is a
@@ -89,6 +116,8 @@ def product_using_accumulate(n, term):
     "*** YOUR CODE HERE ***"
 
 
+
+# Q3
 def compose1(func1, func2):
     """Return a function f, such that f(x) = func1(func2(x))."""
     def f(x):
@@ -112,6 +141,7 @@ def make_repeater(func, n):
     "*** YOUR CODE HERE ***"
 
 
+# Q4
 def zero(f):
     return lambda x: x
 
