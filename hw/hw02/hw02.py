@@ -59,7 +59,7 @@ def product(n, term):
 
 
 
-# Q2
+# Q2 (done)
 def accumulate(combiner, base, n, term):
     """Return the result of combining the first n terms in a sequence and base.
     The terms to be combined are term(1), term(2), ..., term(n).  combiner is a
@@ -75,14 +75,19 @@ def accumulate(combiner, base, n, term):
     25
     >>> accumulate(mul, 2, 3, square)    # 2 * 1^2 * 2^2 * 3^2
     72
-    >>> accumulate(lambda x, y: x + y + 1, 2, 3, square)
+    >>> accumulate(lambda x, y: x + y + 1, 2, 3, square)      # {[(2+1^1+1) + 2^2+1] + 3^2+1}, x is previous, y is current
     19
-    >>> accumulate(lambda x, y: 2 * (x + y), 2, 3, square)
+    >>> accumulate(lambda x, y: 2 * (x + y), 2, 3, square)    # result = 2*(2+1^2) = 6, result = 2*(6+2^2) = 20, result = 2*(20+3^2) = 58
     58
     >>> accumulate(lambda x, y: (x + y) % 17, 19, 20, square)
     16
     """
     "*** YOUR CODE HERE ***"
+    result, i = base, 1
+    while i <= n:
+        result = combiner(result, term(i))
+        i += 1
+    return result
 
 def summation_using_accumulate(n, term):
     """Returns the sum of term(1) + ... + term(n). The implementation
@@ -99,6 +104,7 @@ def summation_using_accumulate(n, term):
     True
     """
     "*** YOUR CODE HERE ***"
+    return accumulate(add, 0, n, term)
 
 def product_using_accumulate(n, term):
     """An implementation of product using accumulate.
@@ -114,15 +120,17 @@ def product_using_accumulate(n, term):
     True
     """
     "*** YOUR CODE HERE ***"
+    return accumulate(mul, 1, n, term)
 
 
 
-# Q3
+# Q3 (done)
 def compose1(func1, func2):
     """Return a function f, such that f(x) = func1(func2(x))."""
     def f(x):
         return func1(func2(x))
     return f
+
 def make_repeater(func, n):
     """Return the function that computes the nth application of func.
 
@@ -139,6 +147,30 @@ def make_repeater(func, n):
     5
     """
     "*** YOUR CODE HERE ***"
+    # https://zhuanlan.zhihu.com/p/505962536
+    # method 1, loop
+    '''
+    def process(x):
+        for i in range(n):
+            x = func(x)
+        return x
+    return process  # return is a function
+                    # e.g. make_repeater(square, 2)(5) becomes process(5), 
+                    # where process(x=5) is:
+                    # for i in range(n):  # n is 2
+                    #    x = square(x)  # initial x is 5
+                    # return x
+    '''
+    # method 2, recursion
+    '''
+    def process(x):
+        if n == 0:
+            return x
+        else:
+            return func(make_repeater(func, n-1)(x))
+    '''
+    # method 3
+    return accumulate(compose1, identity, n, lambda x: func)
 
 
 # Q4
